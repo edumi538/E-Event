@@ -20,7 +20,6 @@ import { it } from "node:test";
 import { ArrowRightIcon, MinusIcon, PlusSquareIcon } from "@chakra-ui/icons";
 import { IEventos } from "../../../types/generic_interface";
 import { GetDataEventFake, setDataEventFake } from "../api/requests";
-import { mockEventos } from "../../../utils/mocks";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -40,10 +39,12 @@ function AdicionarEventos({ Data }: AdicionarEventosProps) {
     new Array(EventoStored && EventoStored.length).fill(false)
   );
 
+  console.log(ArrayRemoveEvento);
+
   useEffect(() => {
     const storedData = localStorage.getItem("ArrayDeEventos");
     if (storedData) {
-      setEventoStored(JSON.parse(storedData).concat(mockEventos));
+      setEventoStored(JSON.parse(storedData));
     } else {
       setEventoStored(undefined);
     }
@@ -64,6 +65,8 @@ function AdicionarEventos({ Data }: AdicionarEventosProps) {
         );
         localStorage.setItem("ArrayDeEventos", JSON.stringify(newArray));
       }
+      setArrayRemoveEvento([]);
+      setNumberCardIsChecked(0);
       if (CardNumbers >= 0) setCardNumbers(CardNumbers - 1);
       resolve(setNumberCardIsChecked(NumberCardIsChecked - 1));
     });
