@@ -16,6 +16,7 @@ yarn dev
 pnpm dev
 # ou
 bun dev
+```
 
 Abra http://localhost:3000 no seu navegador para ver o resultado.
 
