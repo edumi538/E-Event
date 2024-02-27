@@ -6,6 +6,11 @@ Este é um projeto [Next.js](https://nextjs.org/) criado com [`create-next-app`]
 
 ## Início
 
+instale as dependencias com:
+
+
+```yarn ou npm i```
+
 Execute o servidor de desenvolvimento:
 
 ```bash
