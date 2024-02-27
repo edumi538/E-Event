@@ -75,7 +75,7 @@ function CardEventos({
             bgClip="text"
             size="md"
           >
-            {truncate(Title.toLocaleUpperCase(), show ? 40 : 22)}
+            {truncate(Title, show ? 40 : 22)}
           </Heading>
           <Checkbox
             value={index}

@@ -113,7 +113,7 @@ function AdicionarEventos({ Data }: AdicionarEventosProps) {
             textAlign={"center"}
             px={"50px"}
           >
-            Adicione os eventos dos quais você quer mandar email's
+            {`Adicione os eventos dos quais você quer mandar emails`}
           </Heading>
           {EventoStored && EventoStored.length < 1 ? (
             <>
@@ -213,7 +213,7 @@ function AdicionarEventos({ Data }: AdicionarEventosProps) {
                         },
                         index
                       ): React.ReactNode => (
-                        <WrapItem>
+                        <WrapItem key={index}>
                           <CardEventos
                             setNumberCardIsChecked={setNumberCardIsChecked}
                             NumberCardIsChecked={NumberCardIsChecked}
@@ -264,7 +264,18 @@ function AdicionarEventos({ Data }: AdicionarEventosProps) {
                     colorScheme="purple"
                     rightIcon={<ArrowRightIcon />}
                   >
-                    <Link href={"/escrever_email"}>Próximo</Link>
+                    <Link
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                      href={"/escrever_email"}
+                    >
+                      Próximo
+                    </Link>
                   </Button>
                 )}
               </Flex>

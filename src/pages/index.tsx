@@ -30,7 +30,7 @@ export default function Home() {
             bgGradient="linear(to-l, #7928CA, #FF0080)"
             bgClip="text"
           >
-            Bem vindo a melhor plataforma de envio de e-mails para eventos!
+            Bem vindo a melhor plataforma de envio de emails para eventos!
           </Heading>
           <Text
             bgGradient="linear(to-l, #7928CA, #FF0080)"
@@ -41,8 +41,8 @@ export default function Home() {
             textAlign={{ md: "center" }}
             fontWeight={"medium"}
           >
-            Precisa enviar e-mail's para seus eventos de forma simples e
-            prática? não perde tempo
+            Precisa enviar e-mails para seus eventos de forma simples e prática?
+            não perde tempo
           </Text>
           <Button
             width={{ md: "200px", base: "300px" }}
@@ -50,7 +50,16 @@ export default function Home() {
             borderRadius={"full"}
             colorScheme="purple"
           >
-            <Link href={"/adicionar_eventos"}>
+            <Link
+              style={{
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              href={"/adicionar_eventos"}
+            >
               <Text fontSize={{ md: "lg", base: "2xl" }}>Começe agora</Text>
             </Link>
           </Button>

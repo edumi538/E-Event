@@ -27,7 +27,7 @@ function ModalPreview({ onClose, isOpen, title, emailContent }: IModalPreview) {
             bgGradient="linear(to-l, #7928CA, #FF0080)"
             bgClip="text"
           >
-            {title.toLocaleUpperCase()}
+            {title}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>

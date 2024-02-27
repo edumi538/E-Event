@@ -2,6 +2,9 @@ import {
   Button,
   Center,
   Flex,
+  FormControl,
+  FormLabel,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -13,8 +16,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import FormularioAdicionarEvento from "./form";
-import { SubmitHandler, useForm } from "react-hook-form";
+/* import FormularioAdicionarEvento from "./form";
+ */import { SubmitHandler, useForm } from "react-hook-form";
 
 interface ModalAdicionarEventosProps {
   modalTitle: string;
@@ -23,7 +26,7 @@ interface ModalAdicionarEventosProps {
   setCardNumbers: () => void;
 }
 
-type FormData = {
+export type FormData = {
   NomeEvento: string;
   EmailEvento: string;
   DateEvento: Date;
@@ -74,7 +77,7 @@ function ModalAdicionarEventos({
             bgGradient="linear(to-l, #7928CA, #FF0080)"
             bgClip="text"
           >
-            {modalTitle.toLocaleUpperCase()}
+            {modalTitle}
           </ModalHeader>
           <ModalCloseButton display={{ base: "none" }} />
           <ModalBody
@@ -82,7 +85,72 @@ function ModalAdicionarEventos({
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <FormularioAdicionarEvento setFile={setFile} register={register} />
+            <form>
+              <Flex flexDirection={{ base: "column" }}>
+                <FormControl
+                  display={"flex"}
+                  flexDirection={{ base: "column", md: "row" }}
+                  alignItems={{ md: "center" }}
+                >
+                  <FormLabel
+                    width={{ md: "30%" }}
+                    fontSize={{ base: "xl", md: "sm" }}
+                    fontWeight={"medium"}
+                    color={"GrayText"}
+                  >
+                    Nome do Evento:
+                  </FormLabel>
+                  <Input
+                    {...register("NomeEvento")}
+                    type="text"
+                    width={{ md: "80%" }}
+                    shadow={"base"}
+                  />
+                </FormControl>
+                <FormControl
+                  display={"flex"}
+                  flexDirection={{ base: "column", md: "row" }}
+                  mt={{ base: "20px" }}
+                  alignItems={{ md: "center" }}
+                >
+                  <FormLabel
+                    width={{ md: "30%" }}
+                    fontSize={{ base: "xl", md: "sm" }}
+                    fontWeight={"medium"}
+                    color={"GrayText"}
+                  >
+                    E-mail do Evento:
+                  </FormLabel>
+                  <Input
+                    {...register("EmailEvento")}
+                    type="text"
+                    width={{ md: "80%" }}
+                    shadow={"base"}
+                  />
+                </FormControl>
+                <FormControl
+                  display={"flex"}
+                  flexDirection={{ base: "column", md: "row" }}
+                  mt={{ base: "20px" }}
+                  alignItems={{ md: "center" }}
+                >
+                  <FormLabel
+                    width={{ md: "30%" }}
+                    fontSize={{ base: "xl", md: "sm" }}
+                    fontWeight={"medium"}
+                    color={"GrayText"}
+                  >
+                    Data do Evento:
+                  </FormLabel>
+                  <Input
+                    {...register("DateEvento")}
+                    type="date"
+                    width={{ md: "80%" }}
+                    shadow={"base"}
+                  />
+                </FormControl>
+              </Flex>
+            </form>
           </ModalBody>
           <ModalFooter>
             <Button
