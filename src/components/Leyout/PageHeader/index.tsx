@@ -1,25 +1,31 @@
+import { ArrowLeftIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
   HStack,
   Heading,
+  IconButton,
   Link,
   Tab,
   TabList,
   Tabs,
+  Text,
   VStack,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import React from "react";
 
 interface IPageHeader {}
 
 function PageHeader({}: IPageHeader) {
+  const route = useRouter();
+  console.log(route.pathname);
   return (
     <>
       <Flex
         justifyContent={{ base: "center", sm: "space-between" }}
-        alignItems={"center"}
         color={"whitesmoke"}
+        alignItems={"center"}
         py={"4rem"}
         px={"4rem"}
         width={"100%"}
@@ -49,6 +55,15 @@ function PageHeader({}: IPageHeader) {
             />
           </svg>
         </HStack>
+        {route.pathname != "/" && (
+          <Link
+            href={
+              route.pathname == "/escrever_email" ? "/adicionar_eventos" : "/"
+            }
+          >
+            <ArrowLeftIcon color={"pink.800"} boxSize={"30px"} />
+          </Link>
+        )}
       </Flex>
     </>
   );

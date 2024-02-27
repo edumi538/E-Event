@@ -132,7 +132,7 @@ function EscreverEmail({}: IEscreverEmail) {
             textAlign={"center"}
             px={"100px"}
           >
-            Adicione os endereços de e-mail que receberam a mensagem.
+            Adicione os endereços de e-mail que receberão a mensagem.
           </Heading>
           <HStack onClick={addEmailInput} cursor={"pointer"}>
             <Text>Adicionar</Text>
@@ -159,6 +159,7 @@ function EscreverEmail({}: IEscreverEmail) {
                   colorScheme="pink"
                   boxSize={"45px"}
                   marginBottom={5}
+                
                 >
                   -
                 </Button>

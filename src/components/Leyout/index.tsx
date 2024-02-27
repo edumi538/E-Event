@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";
 import { Flex } from "@chakra-ui/react";
