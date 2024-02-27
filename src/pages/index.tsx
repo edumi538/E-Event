@@ -41,7 +41,7 @@ export default function Home() {
             textAlign={{ md: "center" }}
             fontWeight={"medium"}
           >
-            Precisa enviar e-mails para seus eventos de forma simples e prática?
+            Precisa enviar e-mails de forma simples e prática?
             não perde tempo
           </Text>
           <Button

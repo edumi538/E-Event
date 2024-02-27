@@ -116,7 +116,7 @@ function AdicionarEventos({ Data }: AdicionarEventosProps) {
             textAlign={"center"}
             px={"50px"}
           >
-            {`Adicione os eventos dos quais você quer mandar emails`}
+            {`Selecione os eventos dos quais você quer mandar emails`}
           </Heading>
           {EventoStored && EventoStored.length < 1 ? (
             <>
